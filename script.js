@@ -21,8 +21,8 @@ const gridNode = document.querySelectorAll('.grid')
 
 primeiraUl.classList.add('grid')
 
-console.log(gridHTML)
-console.log(gridNode)
+//console.log(gridHTML)
+//console.log(gridNode)
 
 gridNode.forEach(function(item, index) {
     console.log(item)
@@ -34,4 +34,3 @@ arrayGrid.forEach(function(item) {
     console.log(item)
 })
 
-const = arrayGrid = Array.from(gridHTML)
