@@ -29,3 +29,9 @@ gridNode.forEach(function(item, index) {
 })
 
 const arrayGrid = Array.from(gridHTML)
+
+arrayGrid.forEach(function(item) {
+    console.log(item)
+})
+
+const = arrayGrid = Array.from(gridHTML)
