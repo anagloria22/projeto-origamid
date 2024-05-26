@@ -12,3 +12,15 @@ console.log(tituloDesc)
 
 const ultimoP = document.querySelectorAll('footer > p')
 console.log(ultimoP)
+
+const paragrafos = document.querySelectorAll('p')
+console.log(paragrafos)
+
+paragrafos.forEach((item) => {
+    console.log(item)
+})
+
+const textParagrafos = Array.from(paragrafos)
+textParagrafos.forEach(function(item) {
+    console.log(item.innerText)
+})

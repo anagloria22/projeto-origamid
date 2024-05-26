@@ -34,3 +34,11 @@ arrayGrid.forEach(function(item) {
     console.log(item)
 })
 
+/* arrayGrid.forEach((item) => {
+    console.log(item)
+}) essa é a arrow function que tem a função de removermos o function e passar apenas o parametro e logo após colocarmos a => */
+
+/*pode acontecer também de ir em uma só linha de código
+let i = 0
+imgs.forEach(() => console.log(i++))
+*/
