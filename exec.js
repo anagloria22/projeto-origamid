@@ -1,5 +1,5 @@
-const img = document.querySelectorAll('img')
-console.log(img)
+const img1 = document.querySelectorAll('img')
+console.log(img1)
 
 const imgAnimais = document.querySelectorAll('img[src^="imagens/imagem"]')
 console.log(imgAnimais)
@@ -25,14 +25,21 @@ textParagrafos.forEach(function(item) {
     console.log(item.innerText)
 })
 
-//classList retorna uma lista com as classes do elemento e permite adicionar, remover ou verificar quais tem
-const menu = document.querySelector('.menu')
-console.log(menu.classList)
+const img = document.querySelectorAll('img')
+img.forEach((img) => {
+    console.log(img.hasAttribute('alt'))
+})
 
-//getAttribute ou setAttribute são métodos que retornam ou definem de acordo com o atributo selecionado
-const img = document.querySelector('img')
-img.getAttribute('src') //valor do src
-img.setAttribute('alt', 'Texto Alternativo') //muda o alt
-img.hasAttribute('id') // ture/false
-img.removeAttribute('alt') //remove o alt
-img.hasAttributes() // true/false se tem algum atributo
+const itensM = document.querySelectorAll('.menu a')
+itensM.forEach((item) => {
+    item.classList.add('ativo')
+}) //adicionou a classe ativo
+
+itensM.forEach((item) => {
+    item.classList.remove('ativo')
+}) //removeu a classe ativo
+
+itensM[0].classList.add('ativo') //adicionou a classe ativo apenas para o primerio item
+
+const link = document.querySelector('a[href^="http"]')
+link.setAttribute('href', 'https://www.instagram.com/ana.gloria06/') //modificou o último link externo
