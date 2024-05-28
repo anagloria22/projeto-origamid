@@ -43,3 +43,12 @@ itensM[0].classList.add('ativo') //adicionou a classe ativo apenas para o primer
 
 const link = document.querySelector('a[href^="http"]')
 link.setAttribute('href', 'https://www.instagram.com/ana.gloria06/') //modificou o último link externo
+
+const img2 = document.querySelector('img[alt = "raposa"]')
+console.log(img2)
+console.log(img2.offsetTop)
+
+const larImg = document.querySelectorAll('img')
+larImg.forEach((imagem) => {
+    
+}) 
