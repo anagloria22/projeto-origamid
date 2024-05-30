@@ -72,4 +72,4 @@ const tamanhoBrowser = window.matchMedia('(max-width: 720px)').matches
 if (tamanhoBrowser) {
     const menu = document.querySelector('.menu')
     menu.classList.add('menu-mobile')
-}
+} //adiciona a classe menu-mobile se o browser for menor ou igual a 720px
