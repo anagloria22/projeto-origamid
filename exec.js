@@ -68,10 +68,8 @@ links.forEach((link) => {
     }
 }) //verifica se o link atende às exigências de tamanho para ser clicável em disp. móveis
 
-const tamanhoBrowser = window.matchMedia(('max-width: 720px'))
-const menu = document.getElementsByClassName('menu')
-if (tamanhoBrowser.matches) {
+const tamanhoBrowser = window.matchMedia('(max-width: 720px)').matches
+if (tamanhoBrowser) {
+    const menu = document.querySelector('.menu')
     menu.classList.add('menu-mobile')
-} else {
-    console.log('Tamanho está ok.')
 }
