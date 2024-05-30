@@ -46,9 +46,25 @@ link.setAttribute('href', 'https://www.instagram.com/ana.gloria06/') //modificou
 
 const img2 = document.querySelector('img[alt = "raposa"]')
 console.log(img2)
-console.log(img2.offsetTop)
+console.log(img2.offsetTop) //a distância do topo da 1º imagem pro topo da pág
 
 const larImg = document.querySelectorAll('img')
-larImg.forEach((imagem) => {
-    
-}) 
+const arraylarImg = Array.from(larImg)
+let soma = 0
+arraylarImg.forEach((imagem) => {
+    console.log(imagem.width)
+    soma += imagem.width
+})
+console.log(soma) //dá a soma da largura das imagens
+
+const links = document.querySelectorAll('a')
+links.forEach((link) => {
+    const larguraLink = link.offsetWidth
+    const alturaLink = link.offsetHeight
+    if (larguraLink >= 48 && alturaLink >= 48) {
+        console.log(link, 'Possui acessibilidade')
+    } else {
+        console.log(link, 'Não possui acessibilidade')
+    }
+}) //verifica se o link atende às exigências de tamanho para ser clicável em disp. móveis
+
