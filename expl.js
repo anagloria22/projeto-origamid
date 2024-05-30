@@ -99,3 +99,33 @@ if(small.matches) {
 } else {
     console.log('Tela maior que 600px')
 }
+
+//Eventos
+const img = document.querySelector('img')
+function callback () {
+    console.log('clicou')
+}
+
+//img.addEventListener('click', callback) //addEventListener adiciona uma função(chamada de callback) ao elemento que é ativada assim que o evento acontecer neste elemento
+
+//Callback
+//é uma boa prática separar a função de callback do addEventListener, ou seja, declarar a função em vez de passar diretamente uma anônima(exemplo acima)
+
+const animaisLista = document.querySelector('.animais-lista')
+function callbackLista(event) {
+    console.log(event.currentTarget) //mostra a lista de animais, o próprio elemento inteiro
+    console.log(event.target) //mostra a imagem que foi clicada, o item exato do elemento que clicamos
+    console.log(event.type) //mostra o tipo do evento
+    console.log(event.path)
+}
+animaisLista.addEventListener('click', callbackLista)
+
+//event.preventDefault()
+//previne o comportamento padrão de um evento no navegador. Se for o caso de um link externo, faz com que não seja ativado:
+const linkExterno = document.querySelector('a[href^="http"]')
+function cliqueNoLink (event) {
+    event.preventDefault()
+    console.log(event.currentTarget.href)
+}
+
+linkExterno.addEventListener('click', cliqueNoLink)
