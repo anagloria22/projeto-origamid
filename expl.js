@@ -125,7 +125,36 @@ animaisLista.addEventListener('click', callbackLista)
 const linkExterno = document.querySelector('a[href^="http"]')
 function cliqueNoLink (event) {
     event.preventDefault()
-    console.log(event.currentTarget.href)
+    console.log(this.getAttribute('href')) //mostra o link
+    console.log(event.currentTarget) //mostra a tag e o link dentro da tag(se colocarmos .href faz a mesma coisa que a linha acima)
 }
 
 linkExterno.addEventListener('click', cliqueNoLink)
+
+//Diferentes Eventos
+//Click, scroll, resize, keydown, keyup, ouseenter etc são exemplos de eventos e podem ser adicionados a elementos como window ou document
+const h1 = document.querySelector('h1')
+function callback (event) {
+    console.log(event.type, event)
+}
+
+h1.addEventListener('click', callback)
+h1.addEventListener('mouseenter', callback)
+h1.addEventListener('mousemove', callback)
+
+window.addEventListener('scroll', callback)
+window.addEventListener('resize', callback)
+window.addEventListener('keydown', callback) //quando clica em alguma tecla do teclado
+
+//Keyboard
+//podemos adicionar atalhos para facilitar a navegação no site, através dos eventos do keyboard
+
+function handleKeyboard(event) {
+    if(event.key === 'a') {
+        document.body.classList.toggle('azul') //quando clicarmos em A a tela mudará de cor
+    }else if(event.key === 'v') {
+        document.body.classList.toggle('vermelho') //quando clicarmos em V a tela ficará vermelha
+    }    
+}
+
+window.addEventListener('keydown', handleKeyboard)
