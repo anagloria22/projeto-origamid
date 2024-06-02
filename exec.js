@@ -77,16 +77,19 @@ if (tamanhoBrowser) {
 const linksIn = document.querySelectorAll('a[href^="#"]')
 function removeOuAdd (event) {
     event.preventDefault()
-    event.currentTarget.classList.toggle('ativo')
+    linksIn.forEach((link) => {
+        link.classList.remove('ativo')
+    })
+    event.currentTarget.classList.add('ativo')
 }
 
 linksIn.forEach((link) => {
     link.addEventListener('click', removeOuAdd)
-}) //quando clica nos links internos a classe ativo é adicionada ou removida dependendo se ela já estiver lá ou não e também o evento padrão foi prevenido
+}) //quando clica nos links internos a classe ativo é adicionada caso não esteja em nenhum e removida se for adicionada a outro link e também o evento padrão foi prevenido
 
 const todos = document.querySelector('body')
 function qualFoi(event) {
     console.log(event.target.remove(event))
 }
 
-todos.addEventListener('click', qualFoi) //inicilamente só mostrat qual elemento foi clicado, mas depois além de ser clicado é removido
+//todos.addEventListener('click', qualFoi) //inicilamente só mostrat qual elemento foi clicado, mas depois além de ser clicado é removido
