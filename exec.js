@@ -93,3 +93,10 @@ function qualFoi(event) {
 }
 
 //todos.addEventListener('click', qualFoi) //inicilamente só mostrat qual elemento foi clicado, mas depois além de ser clicado é removido
+
+function aumentaTexto (event) {
+    if(event.key === 't') {
+        document.documentElement.classList.toggle('textomaior')
+    }
+}
+window.addEventListener('keydown', aumentaTexto)

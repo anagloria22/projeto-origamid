@@ -30,6 +30,10 @@ body {
     background: rgb(184, 66, 53);
 }
 
+html.textomaior {
+    font-size: 150px;
+}
+
 .menu {
     grid-column: 3 / 5;
     margin-top: 2rem;
