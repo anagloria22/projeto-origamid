@@ -73,3 +73,20 @@ if (tamanhoBrowser) {
     const menu = document.querySelector('.menu')
     menu.classList.add('menu-mobile')
 } //adiciona a classe menu-mobile se o browser for menor ou igual a 720px
+
+const linksIn = document.querySelectorAll('a[href^="#"]')
+function removeOuAdd (event) {
+    event.preventDefault()
+    event.currentTarget.classList.toggle('ativo')
+}
+
+linksIn.forEach((link) => {
+    link.addEventListener('click', removeOuAdd)
+}) //quando clica nos links internos a classe ativo é adicionada ou removida dependendo se ela já estiver lá ou não e também o evento padrão foi prevenido
+
+const todos = document.querySelector('body')
+function qualFoi(event) {
+    console.log(event.target.remove(event))
+}
+
+todos.addEventListener('click', qualFoi) //inicilamente só mostrat qual elemento foi clicado, mas depois além de ser clicado é removido

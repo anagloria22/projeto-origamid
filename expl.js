@@ -158,3 +158,15 @@ function handleKeyboard(event) {
 }
 
 window.addEventListener('keydown', handleKeyboard)
+
+//forEach e Eventos
+// o método addEventListener é adicionado a um único elemento, então é preciso fazer um loop entre os elementos de uma lista para que possa ser adciionado a cada um deles
+const img1 = document.querySelectorAll('img')
+function imgSrc(event) {
+    const src = event.currentTarget.getAttribute('src')
+    console.log(src)
+}
+
+img1.forEach((img) => {
+    img.addEventListener('click', imgSrc)
+})  
