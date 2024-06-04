@@ -138,13 +138,13 @@ function callback (event) {
     console.log(event.type, event)
 }
 
-h1.addEventListener('click', callback)
-h1.addEventListener('mouseenter', callback)
-h1.addEventListener('mousemove', callback)
+//h1.addEventListener('click', callback)
+//h1.addEventListener('mouseenter', callback)
+//h1.addEventListener('mousemove', callback)
 
-window.addEventListener('scroll', callback)
-window.addEventListener('resize', callback)
-window.addEventListener('keydown', callback) //quando clica em alguma tecla do teclado
+//window.addEventListener('scroll', callback)
+//window.addEventListener('resize', callback)
+//window.addEventListener('keydown', callback) //quando clica em alguma tecla do teclado
 
 //Keyboard
 //podemos adicionar atalhos para facilitar a navegação no site, através dos eventos do keyboard
@@ -170,3 +170,37 @@ function imgSrc(event) {
 img1.forEach((img) => {
     img.addEventListener('click', imgSrc)
 })  
+
+//outerHTML, innerHTML e innerText são propriedades que retornam uma string contendo o HTML ou o texto e é possível atribuir um novo texto a elas element.innerText = 'Novo Texto'
+const menu2 = document.querySelector('.menu')
+menu.outerHTML // retorna todo o HTML do elemento, incluindo ele mesmo
+menu.innerHTML // retorna o HTML interno
+menu.innerText // retorna o texto sem tags(elas vêm como texto, caso haja filhos)
+//menu.innerText = '<p>Texto</p>' //a tag vai como texto
+//menu.innerHTML = '<p>Texto</p>' //a tag é renderizada
+console.log(menu.innerText)
+
+//Transversing: como navegar pelo DOM utilizando suas propriedades e métodos
+const lista = document.querySelector('.animais-lista')
+console.log(lista.parentElement.parentElement.parentElement) //navega um elemento acima e assim vai...
+console.log(lista.nextElementSibling) //mostra o próximo elemento
+console.log(lista.previousElementSibling) //mostra o elemento anterior
+console.log(lista.children) //mostra a lista HTML Collection com filhos do elemento dentro
+console.log(lista.children[0]) //mostra o primeiro filho
+console.log(lista.children[--lista.children.length]) //último filho
+console.log(lista.querySelector('li:last-child')) //usando o seletor css
+
+//Element vs Node
+//o element representa o html, uma tag. já o node pode ser a tag, um texto, comentário e até mesmo um espaço
+lista.previousElementSibling //elemento acima
+lista.previousSibling // node acima
+lista.firstChild //primeiro node child
+lista.childNodes // todos os node child
+
+const animais2 = document.querySelector('.animais')
+const contato = document.querySelector('.contato')
+const titulo = contato.querySelector('.titulo')
+//animais.appendChild(titulo) // coloca o elemnto como último filho da lista
+contato.insertBefore(animais2, titulo) //move o elemento animais para antes do elemento titulo
+//contato.removeChild(titulo) //remove o titulo de contato
+contato.replaceChild(lista, titulo) //substitui titulo por lista
