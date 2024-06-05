@@ -200,7 +200,23 @@ lista.childNodes // todos os node child
 const animais2 = document.querySelector('.animais')
 const contato = document.querySelector('.contato')
 const titulo = contato.querySelector('.titulo')
-//animais.appendChild(titulo) // coloca o elemnto como último filho da lista
+//animais.appendChild(titulo) // coloca o elemnto como último filho da lista, após os animais
 contato.insertBefore(animais2, titulo) //move o elemento animais para antes do elemento titulo
 //contato.removeChild(titulo) //remove o titulo de contato
 contato.replaceChild(lista, titulo) //substitui titulo por lista
+
+//podemos criar um novo elemento HTML com javascript
+const novoh1 = document.createElement('h1')
+novoh1.innerText = 'Novo Título'
+novoh1.classList.add('novo-titulo')
+const github = document.querySelector('.cmeugithub')
+github.appendChild(novoh1)
+
+const H1 = document.querySelector('h1')
+const FAQ = document.querySelector('.faq')
+//FAQ.appendChild(H1) //aqui movemos o h1 do documento para depois do faq
+const cloneH1 = H1.cloneNode(true) //para clonar elementos
+cloneH1.classList.add('azul')//aqui foi modificado o clone e não o primeiro H1
+FAQ.appendChild(cloneH1) //clone adicionado depois de FAQ
+
+//Navegação por TABS

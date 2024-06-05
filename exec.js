@@ -99,4 +99,19 @@ function aumentaTexto (event) {
         document.documentElement.classList.toggle('textomaior')
     }
 }
-window.addEventListener('keydown', aumentaTexto)
+window.addEventListener('keydown', aumentaTexto) //quando clicamos T a letra aumenta
+
+const menu2 = document.querySelector('.menu')
+const copy = document.querySelector('.copy')
+const cloneMenu2 = menu2.cloneNode(true)
+copy.appendChild(cloneMenu2) //aqui o menu foi duplicado e adicionado na parte de copy
+
+const FAQ = document.querySelector('.faq')
+const primeirodt = FAQ.querySelector('dt')
+console.log(primeirodt) //selecionado o primeiro dt da dl
+
+const proximodd = primeirodt.nextElementSibling
+console.log(proximodd) //dd referente ao primeiro dt
+
+const animais = document.querySelector('.animais')
+FAQ.innerHTML = animais.innerHTML //o conteúdo HTML de FAQ foi substituído pelo de Animais
