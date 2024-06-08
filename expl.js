@@ -219,4 +219,3 @@ const cloneH1 = H1.cloneNode(true) //para clonar elementos
 cloneH1.classList.add('azul')//aqui foi modificado o clone e não o primeiro H1
 FAQ.appendChild(cloneH1) //clone adicionado depois de FAQ
 
-//Navegação por TABS
