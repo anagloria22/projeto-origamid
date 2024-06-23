@@ -10,3 +10,9 @@ function activeTab(index) {
     })
     tabContent[index].classList.add('ativo')
 } //ess função adiciona a classe ativo ao elemento selecionado e remove da que já tiver antes
+
+tabMenu.forEach((itemMenu, index) => {
+    itemMenu.addEventListener('click', function() {
+        activeTab(index)
+    })
+})
